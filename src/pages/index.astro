@@ -1,5 +1,6 @@
 ---
 import PageBackground from "../components/PageBackground.astro";
+import NavBar from "../components/NavBar.astro";
 ---
 
 <html lang="en">
@@ -12,6 +13,7 @@ import PageBackground from "../components/PageBackground.astro";
 	</head>
 	<body>
 		<PageBackground />
+		<NavBar />
 	</body>
 </html>
 
@@ -20,6 +22,7 @@ import PageBackground from "../components/PageBackground.astro";
 
 	body {
 		background-color: var(--col-bg);
+		overflow: hidden;
 	}
 
 	h1 {

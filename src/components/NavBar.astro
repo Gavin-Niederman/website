@@ -1,0 +1,51 @@
+---
+---
+
+<div class="nav-container">
+    <div class="navbuttons-container">
+        <a class="item" href="/"><img src="/images/logo/logo.png" height="50px" /></a>
+    </div>
+
+    <hr>
+</div>
+
+<style lang="scss">
+    @import "../styles/theme.scss";
+
+    .nav-container {
+        position: sticky;
+
+        z-index: 100;
+
+        rotate: 2deg;
+    }
+
+    .navbuttons-container {
+        width: 101vw;
+        background-color: var(--col-bg);
+        position: relative;
+        top: -5vh;
+        left: -0.5vh;
+
+        display: flex;
+        justify-content: end;
+        gap: 10px;
+    }
+
+    .item {
+        padding: 40px 20px 10px 30px;
+        rotate: -2deg;
+    }
+
+    hr {
+        height: 10px;
+        position: relative;
+        top: -4vh;
+        border: none;
+        width: 105vw;
+        left: -2.5vw;
+        background-color: var(--col-bg);
+        // border-width: 5px;
+        // border-color: var(--col-orange)
+    }
+</style>
