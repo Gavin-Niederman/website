@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Lato:ital@0;1&display=swap');
+
 :root {
-    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Lato:ital@0;1&display=swap');
+    
 
     --garamond: 'EB Garamond';
     --lato: 'Lato';
@@ -13,5 +15,7 @@
     body {
         margin: 0;
         padding: 0;
+        color: var(--col-fg);
+        font-family: var(--lato);
     }
 }

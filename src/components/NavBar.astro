@@ -3,7 +3,8 @@
 
 <div class="nav-container">
     <div class="navbuttons-container">
-        <a class="item" href="/"><img src="/images/logo/logo.png" height="50px" /></a>
+        <a class="item" href="/blogs">Blogs</a>
+        <a class="item home" href="/"><img src="/images/logo/logo.png" height="50px" /></a>
     </div>
 
     <hr>
@@ -29,18 +30,33 @@
 
         display: flex;
         justify-content: end;
+        align-items: center;
         gap: 10px;
     }
 
     .item {
-        padding: 40px 20px 10px 30px;
         rotate: -2deg;
+        padding-top: 15px;
+        padding-right: 10px;
+        font-size: 1.5rem;
+        color: var(--col-fg);
+        background: -webkit-linear-gradient(var(--col-orange), var(--col-pink));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+    }
+
+    .home {
+        padding-right: 30px;
+        padding-left: 10px;
+        padding-top: 30px;
+        padding-bottom: 10px;
     }
 
     hr {
         height: 10px;
         position: relative;
-        top: -4vh;
+        top: -4.5vh;
         border: none;
         width: 105vw;
         left: -2.5vw;
