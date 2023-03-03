@@ -1,0 +1,50 @@
+---
+---
+
+<div class="container">
+    <!-- bg circles -->
+    <img class="bg-circle" src="/images/bg/bg-circle2.png" style="position: absolute; left: 4vh; top: 2vh; height: 100.2vh" />
+    <img class="bg-circle" src="/images/bg/bg-circle2.png" style="position: absolute; left: 86vh; top: 9vh; height: 76vh" />
+
+    <!-- fg circles -->
+    <img class="circle" src="/images/bg/bg-circle2.png" style="rotate: 140deg; position: absolute; left: 88vw; top: 35vh; height: 32vh" />
+    <img class="circle" src="/images/bg/bg-circle1.png" style="rotate: 180deg; position: absolute; right: 0; height: 48vh" />
+
+    <div class="blur">
+        <div class="blur-spacer" />
+    </div>
+</div>
+
+<style lang="scss">
+    @import "../styles/theme.scss";
+
+    .container {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .blur {
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(10px);
+        position: absolute;
+        float: left;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        max-height: 100%;
+
+        .blur-spacer {
+            width: 100vw;
+            height: 100vh;
+        }
+    }
+
+    .bg-circle {
+        filter: brightness(0.55) drop-shadow(0px 0px 10px black);
+        drop-shadow: 5px 5px 5px black;
+    }
+
+    .circle {
+        filter: drop-shadow(0px 0px 10px black);
+    }
+</style>
