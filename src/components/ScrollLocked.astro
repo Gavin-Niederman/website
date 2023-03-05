@@ -1,0 +1,20 @@
+---
+import PageBackground from "../components/PageBackground.astro";
+import NavBar from "../components/NavBar.astro";
+---
+
+<div id="scroll-locked" class="scroll-locked">
+    <PageBackground />
+    <NavBar />
+</div>
+<script src="../scripts/scroll-lock.ts" />
+
+<style lang="scss">
+    .scroll-locked {
+        position: absolute;
+        top: 0px;
+        right:  0px;
+        width: 100vw;
+        height: 100vh;
+    }
+</style>

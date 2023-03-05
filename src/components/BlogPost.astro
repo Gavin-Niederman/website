@@ -1,0 +1,8 @@
+---
+const { blog } = Astro.props;
+---
+
+<a href={blog.url}>
+    <h1>{blog.frontmatter.title}</h1>
+    <p>{blog.frontmatter.description}</p>
+</a>

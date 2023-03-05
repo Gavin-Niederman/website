@@ -1,0 +1,43 @@
+<div class="content-container">
+    <div class="content">
+        <slot/>
+    </div>
+</div>
+
+<style lang="scss">
+    @import "../styles/theme.scss";
+
+    .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 100;
+        position: relative;
+        top: 15vh;
+    }
+
+    .content {
+        margin: 10px;
+        padding: 30px;
+        display: flex;
+        max-width: 800px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 30px;
+
+        border-width: 10px;
+        border-color: #1D201F;
+        border: 5, solid, var(--col-bg) ;
+
+        background: rgba(#1D201F, 0.6);
+        backdrop-filter: blur(20px);
+    }
+
+    .content {
+        :global(p) {
+            font-size: 1.5rem;
+        }
+    }
+</style>

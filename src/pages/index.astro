@@ -1,6 +1,5 @@
 ---
-import PageBackgroundCanvasTest from "../components/PageBackground.astro";
-import NavBar from "../components/NavBar.astro";
+import ScrollLocked from "../components/ScrollLocked.astro";
 ---
 
 <html lang="en">
@@ -12,8 +11,7 @@ import NavBar from "../components/NavBar.astro";
 		<title>Gavin</title>
 	</head>
 	<body>
-		<NavBar />
-		<PageBackgroundCanvasTest />
+		<ScrollLocked />
 	</body>
 </html>
 
@@ -21,6 +19,6 @@ import NavBar from "../components/NavBar.astro";
 	@import "../styles/theme.scss";
 
 	body {
-		overflow: hidden;
-	}
+        overflow-x: hidden;
+    }
 </style>

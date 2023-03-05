@@ -4,29 +4,25 @@ import ScrollLocked from "../components/ScrollLocked.astro";
 ---
 
 <html lang="en">
-    <head>
+	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/images/logo/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Gavin</title>
 	</head>
-    <body>
-        <ScrollLocked />
+	<body>
+		<ScrollLocked />
         <Content>
-            <h1>404! Page not found!</h1>
-            <p>
-                Hello explorer! The page you've been searching for isn't here. 
-                Use the navbar to get back to safety!
-            </p>
-        </Content> 
-    </body>
+            <slot />
+        </Content>
+	</body>
 </html>
 
 <style lang="scss">
-    @import "../styles/theme.scss";
+	@import "../styles/theme.scss";
 
-    body {
-		overflow: hidden;
-	}
+	body {
+        overflow-x: hidden;
+    }
 </style>
