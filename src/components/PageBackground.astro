@@ -1,36 +1,29 @@
----
----
-
-<div class="background-container">
-    <!-- bg circles -->
-    <img class="bg-circle" src="/images/bg/bg-circle2.png" style="position: absolute; rotate: 0deg; left: 90vh; top: 9vh; height: 84vh" />
-    <img class="bg-circle" src="/images/bg/bg-circle2.png" style="position: absolute; rotate: 140deg; left: 8vh; top: 2vh; height: 105vh" />
-
-    <!-- fg circles -->
-    <img class="circle" src="/images/bg/bg-circle2.png" style="rotate: 140deg; position: absolute; left: 88vw; top: 35vh; height: 32vh" />
-    <img class="circle" src="/images/bg/bg-circle1.png" style="rotate: 180deg; position: absolute; right: 0; height: 52vh" />
-    <img class="circle" src="/images/bg/bg-circle2.png" style="rotate: 140deg; position: absolute; right: 85vw; top: 10vh; height: 44vh" />
-    <img class="circle" src="/images/bg/bg-circle2.png" style="rotate: 140deg; position: absolute; right: 81vw; top: -10vh; height: 44vh" />
-    <img class="circle" src="/images/bg/bg-circle1.png" style="rotate: 0deg; position: absolute; left: 0; bottom: 0; height: 25vh" />
-    <img class="circle" src="/images/bg/bg-circle2.png" style="rotate: 0deg; position: absolute; left: 45vw; top: 80vh; height: 57vh" />
-    <img class="circle" src="/images/bg/bg-circle2.png" style="rotate: 0deg; position: absolute; left: 80vw; top: 75vh; height: 67vh" />
-
+<div class="bg-container" id="container">
+    <canvas class="background" id="background">
+        Background
+    </canvas>
     <div class="blur">
         <div class="blur-spacer" />
     </div>
+    <script src="../scripts/background.ts" />
 </div>
 
 <style lang="scss">
-    @import "../styles/theme.scss";
+    .background {
+        width: 100vw;
+        height: 100vh;
+    }
 
-    .background-container {
-        overflow: hidden;
-        height: 100%;
+    .bg-container {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        float: left;
     }
 
     .blur {
-        background-color: rgba(29, 32, 31, 0.2);
-        backdrop-filter: blur(8px);
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(15px);
         position: absolute;
         float: left;
         top: 0;
@@ -42,14 +35,5 @@
             width: 100vw;
             height: 100vh;
         }
-    }
-
-    .bg-circle {
-        filter: brightness(0.55) drop-shadow(0px 0px 10px black);
-        drop-shadow: 5px 5px 5px black;
-    }
-
-    .circle {
-        filter: drop-shadow(0px 0px 10px black);
     }
 </style>

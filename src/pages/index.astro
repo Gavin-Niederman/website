@@ -1,5 +1,5 @@
 ---
-import PageBackground from "../components/PageBackground.astro";
+import PageBackgroundCanvasTest from "../components/PageBackground.astro";
 import NavBar from "../components/NavBar.astro";
 ---
 
@@ -9,11 +9,11 @@ import NavBar from "../components/NavBar.astro";
 		<link rel="icon" type="image/svg+xml" href="/images/logo/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Gavin</title>
 	</head>
 	<body>
-		<PageBackground />
 		<NavBar />
+		<PageBackgroundCanvasTest />
 	</body>
 </html>
 
@@ -21,11 +21,6 @@ import NavBar from "../components/NavBar.astro";
 	@import "../styles/theme.scss";
 
 	body {
-		background-color: var(--col-bg);
 		overflow: hidden;
-	}
-
-	h1 {
-		color: var(--col-fg)
 	}
 </style>
