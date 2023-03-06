@@ -3,6 +3,56 @@ const { blog } = Astro.props;
 ---
 
 <a href={blog.url}>
-    <h1>{blog.frontmatter.title}</h1>
-    <p>{blog.frontmatter.description}</p>
+    <div class="container" >
+        <div>
+            <h1 class="title">{blog.frontmatter.title}</h1>
+            <p>{blog.frontmatter.description}</p>
+            <p class="date">- {blog.frontmatter.date}</p>
+        </div>
+        <img class="image" src={blog.frontmatter.image} />
+    </div>
 </a>
+
+<style lang="scss">
+    @import "../styles/theme.scss";
+
+    a {
+        display: block;
+        padding: 1rem;
+        text-decoration: none;
+        color: #000;
+        border: 4px solid var(--col-fg);
+        border-radius: 20px;
+        max-height: 200px;
+    }
+
+    a:hover {
+        border-color: var(--col-orange);
+    }
+
+    h1 {
+        margin: 0;
+    }
+    p {
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .image {
+        border-radius: 20px;
+        height: 200px;
+    }
+
+    @media (max-width: 600px) {
+        .image {
+            height: 0px;
+        }
+    }
+</style>

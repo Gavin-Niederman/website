@@ -46,17 +46,17 @@ class Renderer {
         this.circleImage.src = "/images/bg/bg-circle2.png";
 
         this.bgCircles = [
-            new Circle(84, 45, 9, 0.7),
-            new Circle(105, 8, 2, 0.6),
+            new Circle(84, 45, 9, 0.75),
+            new Circle(105, 8, 2, 0.7),
         ]
         this.circles = [
-            new Circle(45, 90, 35, 0.4),
+            new Circle(45, 90, 35, 0.5),
             new Circle(55, 35, -22, 0.2),
-            new Circle(120, 85, 0 - 104/2, 0.4),
+            new Circle(120, 85, -52, 0.3),
             new Circle(64, -16, 10, 0.7),
             new Circle(64, -13, -10, 0.3),
             new Circle(60, -10, 75, 0.1),
-            new Circle(67, 45, 80, 0.1),
+            new Circle(67, 45, 80, 0.3),
             new Circle(78, 80, 75, 0.1),
         ]
     }
@@ -79,23 +79,23 @@ class Renderer {
         this.context.fillStyle = "#1D201F";
         this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.bgCircles.forEach((circle: Circle) => {
-            this.context.drawImage(
-                this.circleImage,
-                (circle.x - ((this.mouseX / 250) * (1 - circle.depth))) * (this.canvas.width / 100),
-                (circle.y - (((this.mouseY / 250) + (this.scroll / 75)) * (1 - circle.depth))) * (this.canvas.height / 100),
-                circle.size * (this.canvas.height / 100), circle.size * (this.canvas.height / 100)
-            );
+            this.drawCircle(circle);
         })
         this.context.fillStyle = "#1D201F6C"
         this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.circles.forEach((circle: Circle) => {
-            this.context.drawImage(
-                this.circleImage,
-                (circle.x - ((this.mouseX / 250) * (1 - circle.depth))) * (this.canvas.width / 100),
-                (circle.y - (((this.mouseY / 250) + (this.scroll / 75)) * (1 - circle.depth))) * (this.canvas.height / 100),
-                circle.size * (this.canvas.height / 100), circle.size * (this.canvas.height / 100)
-            );
+            this.drawCircle(circle);
         })
+    }
+
+    drawCircle(circle: Circle) {
+        this.context.drawImage(
+            this.circleImage,
+            (circle.x - ((this.mouseX / 250) * (1 - circle.depth))) * (this.canvas.width / 100),
+            (circle.y - (((this.mouseY / 250) + (this.scroll / 75)) * (1 - circle.depth))) * (this.canvas.height / 100),
+            circle.size * (this.canvas.height / 100), circle.size * (this.canvas.height / 100)
+        );
+        console.log("Circle", circle.x, circle.y, circle.size)
     }
 }
 
@@ -111,6 +111,12 @@ document.addEventListener("mousemove", (ev) => {
 
 document.addEventListener("scroll", (ev) => {
     renderer.handleScroll(ev);
+    size = container.getBoundingClientRect() as DOMRect;
+    renderer.resize(size.width, size.height);
+    renderer.render();
+});
+
+window.addEventListener("resize", (ev) => {
     size = container.getBoundingClientRect() as DOMRect;
     renderer.resize(size.width, size.height);
     renderer.render();

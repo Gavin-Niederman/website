@@ -20,20 +20,12 @@ const posts = await Astro.glob('../pages/blogs/*.md');
             <PageBackground />
             <NavBar />
         </div>
-        <div class="content-container">
-            <Content class="desc">
-                <p>
-                    You can expect a new blog post every few days. 
-                    I typically write about subjects related to computer science, but I do branch out.
-                </p>
-            </Content>
-            <Content class="blogs-list">
-                <h1>Blog Posts</h1>
-                <ul>
-                    {posts.map((post) => <li><BlogPost blog={post} /></li>)}  
-                </ul>
-            </Content>
-        </div>
+        <Content class="blogs-list">
+            <h1>Blog Posts</h1>
+            <ul class="list">
+                {posts.map((post) => <li><BlogPost blog={post} /></li>)}  
+            </ul>
+        </Content>
 	</body>
 </html>
 
@@ -44,18 +36,21 @@ const posts = await Astro.glob('../pages/blogs/*.md');
         overflow-x: hidden;
     }
 
-    .content-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
     .desc {
         flex-grow: 1;
     }
 
     .blogs-list {
         flex-grow: 2;
+    }
+
+    .list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+            padding-bottom: 20px;
+        }
     }
 </style>
