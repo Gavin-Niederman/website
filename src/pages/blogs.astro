@@ -1,7 +1,8 @@
 ---
 import BlogPost from "../components/BlogPost.astro";
 import Content from "../components/Content.astro";
-import ScrollLocked from "../components/ScrollLocked.astro";
+import NavBar from "../components/NavBar.astro";
+import PageBackground from "../components/PageBackground.astro";
 
 const posts = await Astro.glob('../pages/blogs/*.md');
 ---
@@ -15,7 +16,10 @@ const posts = await Astro.glob('../pages/blogs/*.md');
 		<title>Gavin - Blogs</title>
 	</head>
 	<body>
-        <ScrollLocked />
+        <div id="scroll-locked" class="scroll-locked">
+            <PageBackground />
+            <NavBar />
+        </div>
         <div class="content-container">
             <Content class="desc">
                 <p>

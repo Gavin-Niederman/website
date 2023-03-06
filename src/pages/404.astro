@@ -1,6 +1,7 @@
 ---
 import Content from "../components/Content.astro";
-import ScrollLocked from "../components/ScrollLocked.astro";
+import NavBar from "../components/NavBar.astro";
+import PageBackground from "../components/PageBackground.astro";
 ---
 
 <html lang="en">
@@ -12,7 +13,8 @@ import ScrollLocked from "../components/ScrollLocked.astro";
 		<title>Gavin</title>
 	</head>
     <body>
-        <ScrollLocked />
+        <PageBackground />
+        <NavBar />
         <Content>
             <h1>404! Page not found!</h1>
             <p>
