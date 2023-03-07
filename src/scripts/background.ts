@@ -20,6 +20,7 @@ class Renderer {
     private canvas: HTMLCanvasElement;
     private context: CanvasRenderingContext2D;
     private circleImage: HTMLImageElement;
+    private circleShadowImage: HTMLImageElement;
     private circles: Circle[];
     private bgCircles: Circle[];
     private mouseX: number;
@@ -43,7 +44,17 @@ class Renderer {
             },
             false
         );
-        this.circleImage.src = "/images/bg/bg-circle2.png";
+        this.circleImage.src = "/bg/bg-circle.png";
+        this.circleShadowImage = new Image();
+        this.circleShadowImage.addEventListener(
+            "load",
+            () => {
+                renderer.render();
+            },
+            false
+        );
+        this.circleShadowImage.src = "/bg/bg-circle-shadow.png";
+
 
         this.bgCircles = [
             new Circle(84, 45, 9, 0.75),
@@ -70,12 +81,14 @@ class Renderer {
         this.scroll = window.scrollY;
     }
 
-    resize(width: number, height: number) {
-        this.canvas.width = width;
-        this.canvas.height = height;
+    updateSize() {
+        size = container.getBoundingClientRect() as DOMRect;
+        this.canvas.width = size.width;
+        this.canvas.height = size.height;
     }
 
     render() {
+        this.updateSize();
         this.context.fillStyle = "#1D201F";
         this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.bgCircles.forEach((circle: Circle) => {
@@ -89,11 +102,22 @@ class Renderer {
     }
 
     drawCircle(circle: Circle) {
+        let x = (circle.x - ((this.mouseX / 250) * (1 - circle.depth))) * (this.canvas.width / 100);
+        let y = (circle.y - (((this.mouseY / 250) + (this.scroll / 75)) * (1 - circle.depth))) * (this.canvas.height / 100);
+        let size = circle.size * (this.canvas.height / 100);
+        this.context.drawImage(
+            this.circleShadowImage,
+            x - 70/2,
+            y - 70/2,
+            size + 70,
+            size + 70
+        );
         this.context.drawImage(
             this.circleImage,
-            (circle.x - ((this.mouseX / 250) * (1 - circle.depth))) * (this.canvas.width / 100),
-            (circle.y - (((this.mouseY / 250) + (this.scroll / 75)) * (1 - circle.depth))) * (this.canvas.height / 100),
-            circle.size * (this.canvas.height / 100), circle.size * (this.canvas.height / 100)
+            x,
+            y,
+            size,
+            size
         );
         console.log("Circle", circle.x, circle.y, circle.size)
     }
@@ -104,20 +128,14 @@ const renderer = new Renderer();
 
 document.addEventListener("mousemove", (ev) => {
     renderer.handleMouseMovement(ev);
-    size = container.getBoundingClientRect() as DOMRect;
-    renderer.resize(size.width, size.height);
     renderer.render();
 });
 
 document.addEventListener("scroll", (ev) => {
     renderer.handleScroll(ev);
-    size = container.getBoundingClientRect() as DOMRect;
-    renderer.resize(size.width, size.height);
     renderer.render();
 });
 
 window.addEventListener("resize", (ev) => {
-    size = container.getBoundingClientRect() as DOMRect;
-    renderer.resize(size.width, size.height);
     renderer.render();
 });
