@@ -119,15 +119,11 @@ class Renderer {
             size,
             size
         );
-        console.log("Circle", circle.x, circle.y, circle.size)
     }
 }
 
 
 const renderer = new Renderer();
-
-
-console.log(window.matchMedia("(max-width: 700px)").matches)
 
 if (!window.matchMedia("(max-width: 700px)").matches) {
     document.addEventListener("mousemove", (ev) => {
