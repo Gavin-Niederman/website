@@ -126,10 +126,15 @@ class Renderer {
 
 const renderer = new Renderer();
 
-document.addEventListener("mousemove", (ev) => {
-    renderer.handleMouseMovement(ev);
-    renderer.render();
-});
+
+console.log(window.matchMedia("(max-width: 700px)").matches)
+
+if (!window.matchMedia("(max-width: 700px)").matches) {
+    document.addEventListener("mousemove", (ev) => {
+        renderer.handleMouseMovement(ev);
+        renderer.render();
+    });
+}
 
 document.addEventListener("scroll", (ev) => {
     renderer.handleScroll(ev);

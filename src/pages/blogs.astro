@@ -16,10 +16,8 @@ const posts = await Astro.glob('../pages/blogs/*.md');
 		<title>Gavin - Blogs</title>
 	</head>
 	<body>
-        <div id="scroll-locked" class="scroll-locked">
-            <PageBackground />
-            <NavBar />
-        </div>
+        <PageBackground />
+        <NavBar />
         <Content class="blogs-list">
             <h1>Blog Posts</h1>
             <ul class="list">

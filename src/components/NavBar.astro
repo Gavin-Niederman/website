@@ -43,19 +43,31 @@
         padding-right: 10px;
         font-size: 1.75rem;
         font-family: var(--font-lato);
-        color: var(--col-fg);
+        color: var(--col-pink);
         filter: drop-shadow(0px 0px 5px #000);
-        background: -webkit-linear-gradient(var(--col-orange), var(--col-pink));
+        background: linear-gradient(var(--col-orange), var(--col-purple));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-decoration: none;
+        transition: all 0.2s linear;
+    }
+
+    .item:hover {
+        background: linear-gradient(var(--col-pink), var(--col-orange));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: scale(1.15);
     }
 
     .home {
         padding-right: 30px;
         padding-left: 10px;
-        padding-top: 30px;
+        padding-top: 35px;
         padding-bottom: 10px;
+    }
+
+    .home:hover {
+        transform: scale(1.15);
     }
 
     hr {
