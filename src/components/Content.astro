@@ -36,14 +36,14 @@
         filter:  drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.468));
     }
 
-    .content {
-        :global(p) {
-            font-size: 1.5rem;
-            margin-top: 0;
-        }
+    .content :global(p, li) {
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin: 0;
+    }
 
-        :global(h1) {
-            color: var(--col-purple);
-        }
+    .content :global(a) {
+        text-decoration: none;
+		color: var(--col-orange)
     }
 </style>

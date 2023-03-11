@@ -125,7 +125,7 @@ class Renderer {
 
 const renderer = new Renderer();
 
-if (!window.matchMedia("(max-width: 700px)").matches) {
+if (!window.matchMedia("(max-width: 800px)").matches) {
     document.addEventListener("mousemove", (ev) => {
         renderer.handleMouseMovement(ev);
         renderer.render();

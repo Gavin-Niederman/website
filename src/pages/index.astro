@@ -17,12 +17,36 @@ import PageBackground from "../components/PageBackground.astro";
 		<NavBar />
 
 		<div class="about">
-			<div class="about-item">
-				<Content>
-					<h1>Who am I?</h1>
-					<p>I am Gavin Niederman, a high scool student interested in computer science and graphic design.</p>
-				</Content>
+			<div class="content-image-pair">
+				<div class="content">
+					<Content>
+						<h1>Hi I'm Gavin</h1>
+						<p>
+							I'm Gavin Niederman, a high school student interested in computer science and graphic design. I write miscellaneous blogs and post them here.
+							You can find much of my code on <a href="https://github.com/gavin-niederman">my github account</a>.
+						</p>
+					</Content>
+				</div>
+				<img class="image" src="/logo/logo.png"/>
 			</div>
+
+			<div class="content-image-pair">
+				<img class="image" src="/logo/logo.png"/>
+				<div class="content">
+					<Content>
+						<h1>What I write</h1>
+						<p>I write blogs about many topics, including but not limited to:</p>
+						<ul>
+							<li>Computer science</li>
+							<li>Writeups (for example CTF writeups)</li>
+							<li>Design (3d modeling, graphic design, etc.)</li>
+						</ul>
+						<p>I will occasionally branch out and write about something completely different. Click on "Blogs" in the navbar or right <a href="blogs">here</a> to read my blogs</p>
+					</Content>
+				</div>
+			</div>
+
+
 		</div>
 	</body>
 </html>
@@ -33,4 +57,49 @@ import PageBackground from "../components/PageBackground.astro";
 	body {
         overflow-x: hidden;
     }
+
+	.about {
+		gap: 30px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.content-image-pair {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		max-width: 1000px;
+
+		.content {
+			width: 70%;
+		}
+
+		.image {
+			position: relative;
+			margin: 10px;
+			width: 30%;
+			border-radius: 30px;
+			top: 15vh;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.content-image-pair {
+			flex-direction: column;
+			gap: 0px;
+
+			.content {
+				width: 100%;
+			}
+
+			.image {
+				width: 0%;
+				margin: 0px;
+			}
+		}
+	}
 </style>
