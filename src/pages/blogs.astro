@@ -1,38 +1,28 @@
 ---
 import BlogPost from "../components/BlogPost.astro";
 import Content from "../components/Content.astro";
-import NavBar from "../components/NavBar.astro";
-import PageBackground from "../components/PageBackground.astro";
+import Page from "../layouts/Page.astro";
 
-const posts = await Astro.glob('../pages/blogs/*.md');
+const posts = await Astro.glob("../pages/blogs/*.md");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/logo/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Gavin - Blogs</title>
-	</head>
-	<body>
-        <PageBackground />
-        <NavBar />
-        <Content class="blogs-list">
-            <h1>Blog Posts</h1>
-            <ul class="list">
-                {posts.map((post) => <li><BlogPost blog={post} /></li>)}  
-            </ul>
-        </Content>
-	</body>
-</html>
+<Page title="Gavin - Blogs">
+    <Content class="blogs-list">
+        <h1>Blog Posts</h1>
+        <ul class="list">
+            {
+                posts.map((post) => (
+                    <li>
+                        <BlogPost blog={post} />
+                    </li>
+                ))
+            }
+        </ul>
+    </Content>
+</Page>
 
 <style lang="scss">
-	@import "../styles/theme.scss";
-
-    body {
-        overflow-x: hidden;
-    }
+    @import "../styles/theme.scss";
 
     .desc {
         flex-grow: 1;

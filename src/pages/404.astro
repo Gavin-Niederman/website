@@ -1,34 +1,14 @@
 ---
 import Content from "../components/Content.astro";
-import NavBar from "../components/NavBar.astro";
-import PageBackground from "../components/PageBackground.astro";
+import Page from "../layouts/Page.astro";
 ---
 
-<html lang="en">
-    <head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/logo/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Gavin</title>
-	</head>
-    <body>
-        <PageBackground />
-        <NavBar />
-        <Content>
-            <h1>404! Page not found!</h1>
-            <p>
-                Hello explorer! The page you've been searching for isn't here. 
-                Use the navbar to get back to safety!
-            </p>
-        </Content> 
-    </body>
-</html>
-
-<style lang="scss">
-    @import "../styles/theme.scss";
-
-    body {
-		overflow: hidden;
-	}
-</style>
+<Page title="Gavin - 404">
+    <Content>
+        <h1>404! Page not found!</h1>
+        <p>
+            Hello explorer! The page you've been searching for isn't here. Use
+            the navbar to get back to safety!
+        </p>
+    </Content>
+</Page>

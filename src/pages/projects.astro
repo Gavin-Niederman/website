@@ -1,32 +1,15 @@
 ---
 import Content from "../components/Content.astro";
-import NavBar from "../components/NavBar.astro";
-import PageBackground from "../components/PageBackground.astro";
+import Page from "../layouts/Page.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/logo/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Gavin</title>
-	</head>
-	<body>
-		<PageBackground />
-		<NavBar />
-
-		<Content>
-            <h1>Projects</h1>
-            <p>This page is a list of some of my most notable projects. If I did not create the entire project, or most of it, I will include what exactly I added to it.</p>
-        </Content>
-	</body>
-</html>
-
-<style lang="scss">
-	@import "../styles/theme.scss";
-
-	body {
-        overflow-x: hidden;
-    }
-</style>
+<Page title="Gavin - Projects">
+	<Content>
+		<h1>Projects</h1>
+		<p>
+			This page is a list of some of my most notable projects. If I did
+			not create the entire project, or most of it, I will include what
+			exactly I added to it.
+		</p>
+	</Content>
+</Page>

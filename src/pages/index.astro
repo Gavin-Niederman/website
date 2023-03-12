@@ -1,62 +1,53 @@
 ---
 import Content from "../components/Content.astro";
-import NavBar from "../components/NavBar.astro";
-import PageBackground from "../components/PageBackground.astro";
+import Page from "../layouts/Page.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/logo/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Gavin</title>
-	</head>
-	<body>
-		<PageBackground />
-		<NavBar />
-
-		<div class="about">
-			<div class="content-image-pair">
-				<div class="content">
-					<Content>
-						<h1>Hi I'm Gavin</h1>
-						<p>
-							I'm Gavin Niederman, a high school student interested in computer science and graphic design. I write miscellaneous blogs and post them here.
-							You can find much of my code on <a href="https://github.com/gavin-niederman">my github account</a>.
-						</p>
-					</Content>
-				</div>
-				<img class="image" src="/logo/logo.png"/>
+<Page class="Gavin">
+	<div class="about">
+		<div class="content-image-pair">
+			<div class="content">
+				<Content>
+					<h1>Hi I'm Gavin</h1>
+					<p>
+						I'm Gavin Niederman, a high school student interested in
+						computer science and graphic design. I write
+						miscellaneous blogs and post them here. You can find
+						much of my code on <a href="https://github.com/gavin-niederman">my github account</a
+						>.
+					</p>
+				</Content>
 			</div>
-
-			<div class="content-image-pair">
-				<img class="image" src="/logo/logo.png"/>
-				<div class="content">
-					<Content>
-						<h1>What I write</h1>
-						<p>I write blogs about many topics, including but not limited to:</p>
-						<ul>
-							<li>Computer science</li>
-							<li>Writeups (for example CTF writeups)</li>
-							<li>Design (3d modeling, graphic design, etc.)</li>
-						</ul>
-						<p>I will occasionally branch out and write about something completely different. Click on "Blogs" in the navbar or right <a href="blogs">here</a> to read my blogs</p>
-					</Content>
-				</div>
-			</div>
-
-
+			<img class="image" src="/logo/logo.png" />
 		</div>
-	</body>
-</html>
+
+		<div class="content-image-pair">
+			<img class="image" src="/logo/logo.png" />
+			<div class="content">
+				<Content>
+					<h1>What I write</h1>
+					<p>
+						I write blogs about many topics, including but not
+						limited to:
+					</p>
+					<ul>
+						<li>Computer science</li>
+						<li>Writeups (for example CTF writeups)</li>
+						<li>Design (3d modeling, graphic design, etc.)</li>
+					</ul>
+					<p>
+						I will occasionally branch out and write about something
+						completely different. Click on "Blogs" in the navbar or
+						right <a href="blogs">here</a> to read my blogs
+					</p>
+				</Content>
+			</div>
+		</div>
+	</div>
+</Page>
 
 <style lang="scss">
 	@import "../styles/theme.scss";
-
-	body {
-        overflow-x: hidden;
-    }
 
 	.about {
 		gap: 30px;
@@ -79,11 +70,9 @@ import PageBackground from "../components/PageBackground.astro";
 		}
 
 		.image {
-			position: relative;
 			margin: 10px;
 			width: 30%;
 			border-radius: 30px;
-			top: 15vh;
 		}
 	}
 
