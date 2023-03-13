@@ -1,5 +1,4 @@
 ---
-import Container from "../components/Container.astro";
 import NavBar from "../components/NavBar.astro";
 import PageBackground from "../components/PageBackground.astro";
 
@@ -16,9 +15,9 @@ const { title } = Astro.props;
 	<body>
 		<PageBackground/>
 		<NavBar />
-        <Container>
+        <div class="container">
             <slot />
-        </Container>
+        </div>
 	</body>
 </html>
 
@@ -27,5 +26,10 @@ const { title } = Astro.props;
 
 	body {
         overflow-x: hidden;
+    }
+
+    .container {
+        position: relative;
+        top: 15vh;
     }
 </style>
